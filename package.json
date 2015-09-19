@@ -1,0 +1,22 @@
+{
+  "name": "dictionary",
+  "version": "0.0.1",
+  "description": "My Dictionary",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joegesualdo/dictionary.git"
+  },
+  "author": "Joe Gesualdo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joegesualdo/dictionary/issues"
+  },
+  "homepage": "https://github.com/joegesualdo/dictionary#readme",
+  "devDependencies": {
+    "concat-files": "^0.1.0"
+  }
+}

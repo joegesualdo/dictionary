@@ -1,9 +1,9 @@
 var fs = require('fs');
 var readline = require('readline');
 
-function getWordJSONS(callback){
+function getDictionary(callback){
   var rd = readline.createInterface({
-      input: fs.createReadStream('./dictionary.txt'),
+      input: fs.createReadStream(__dirname+'/dictionary.txt'),
       output: process.stdout,
       terminal: false
   });
@@ -13,14 +13,13 @@ function getWordJSONS(callback){
       words.push(JSON.parse(line));
   });
   rd.on('close', function() {
-    callback(null, words)
+    wordsObj = {}
+    for(var i = 0; i < words.length; i++){
+      wordsObj[words[i].name] = words[i]
+    }
+    callback(null, wordsObj)
   });
 }
 
-getWordJSONS(function(err, words){
-  wordsObj = {}
-  for(var i = 0; i < words.length; i++){
-    wordsObj[words[i].name] = words[i]
-  }
-  console.log(wordsObj.hello)
-})
+module.exports = getDictionary 
+

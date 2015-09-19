@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+var fs = require('fs')
+var path = require('path')
+var concat = require('concat-files');
+
+fs.readdir(__dirname+"/../dictionary/", function(err, result){
+  paths = result.map(function(name){
+    return __dirname +"/../dictionary/"+name
+  })
+  concat(paths, __dirname+"/../dictionary.txt", function(){
+    console.log("Dictionary file created");
+  })
+})
+
