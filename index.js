@@ -22,4 +22,3 @@ function getDictionary(callback){
 }
 
 module.exports = getDictionary 
-
